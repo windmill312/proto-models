@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+import "common/model/model.proto";
+//import "auth/v1/model/model.proto";
+import "coffeehouse/v1/model/model.proto";
+
+option java_multiple_files = true;
+option java_package = "com.sychev.coffeehouse.grpc.model.v1";
+
+
+message GGetAllCafesAroundClientRequest {
+    //GAuthentication authentication = 1;
+    GPageable pageable = 1;
+    GLocation location = 2;
+}
+
+message GGetAllCafesRequest {
+    //GAuthentication authentication = 1;
+    GPageable pageable = 1;
+}
+
+message GGetCafeRequest {
+    //GAuthentication authentication = 1;
+    GUuid cafeUid = 1;
+}
+
+message GAddCafeRequest {
+    //GAuthentication authentication = 1;
+    GCafeInfo cafe = 1;
+}
+
+message GUpdateCafeRequest {
+    //GAuthentication authentication = 1;
+    GCafeInfo cafe = 1;
+}
+
+message GRemoveCafeRequest {
+    //GAuthentication authentication = 1;
+    GUuid cafeUid = 1;
+}
