@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "common/model/model.proto";
+import "customer/v1/model/model.proto";
+
+option java_multiple_files = true;
+option java_package = "com.github.windmill312.customer.grpc.model.v1";
+
+
+message GGetAllCustomersResponse {
+    GPage page = 1;
+    repeated GCustomerInfo customers = 2;
+}
+
+message GGetCustomerResponse {
+    GCustomerInfo customer = 1;
+}
+
+message GAddCustomerResponse {
+    GUuid customerUid = 1;
+}
+

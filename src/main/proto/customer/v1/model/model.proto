@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "common/model/model.proto";
+
+option java_multiple_files = true;
+option java_package = "com.github.windmill312.customer.grpc.model.v1";
+
+message GCustomerInfo {
+
+    string name = 1;
+    int64 birthDate = 2;
+    GUuid extId = 3;
+}

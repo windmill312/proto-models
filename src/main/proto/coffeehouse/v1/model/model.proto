@@ -3,7 +3,7 @@ syntax = "proto3";
 import "common/model/model.proto";
 
 option java_multiple_files = true;
-option java_package = "com.sychev.coffeehouse.grpc.model.v1";
+option java_package = "com.github.windmill312.coffeehouse.grpc.model.v1";
 
 message GCafeInfo {
     GUuid cafeUid = 1;

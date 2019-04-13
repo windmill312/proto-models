@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "common/model/model.proto";
+import "customer/v1/model/request.proto";
+import "customer/v1/model/response.proto";
+
+option java_multiple_files = true;
+option java_package = "com.github.windmill312.customer.grpc.service.v1";
+
+
+service CustomerServiceV1 {
+
+    rpc getAllCustomers (GGetAllCustomersRequest) returns (GGetAllCustomersResponse);
+
+    rpc getCustomer (GGetCustomerRequest) returns (GGetCustomerResponse);
+
+    rpc addCustomer (GAddCustomerRequest) returns (GAddCustomerResponse);
+
+}
