@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+import "common/v1/model/model.proto";
+import "auth/v1/model/request.proto";
+import "auth/v1/model/response.proto";
+
+option java_multiple_files = true;
+option java_package = "com.github.windmill312.auth.grpc.service.v1";
+
+
+service AuthServiceV1 {
+
+    rpc authenticateAny (GAuthenticateAnyRequest) returns (GAuthenticateAnyResponse);
+
+    rpc authenticateService (GAuthenticateServiceRequest) returns (GAuthenticateServiceResponse);
+
+    rpc getAuthentication (GGetAuthenticationRequest) returns (GGetAuthenticationResponse);
+
+    rpc revokeAuthentication (GRevokeAuthenticationRequest) returns (Empty);
+
+    rpc generateToken (GGenerateTokenRequest) returns (GGenerateTokenResponse);
+
+}
+
+service AccessServiceV1 {
+
+    rpc checkAccess (GCheckAccessRequest) returns (Empty);
+
+}
+
+service OAuthServiceV1 {
+
+    rpc authorize (GOAuthAuthorizeRequest) returns (GOAuthAuthorizeResponse);
+
+    rpc getToken (GOAuthTokenRequest) returns (GOAuthTokenResponse);
+
+    rpc refreshToken (GOAuthRefreshTokenRequest) returns (GOAuthRefreshTokenResponse);
+
+}
+
+service CredentialsServiceV1 {
+
+    rpc getPrincipalKey (GGetPrincipalOuterKeyRequest) returns (GGetPrincipalKeyResponse);
+
+    rpc addCredentials (GAddCredentialsRequest) returns (Empty);
+
+}
+
+service PrincipalServiceV1 {
+
+    rpc addPrincipal (GAddPrincipalRequest) returns (GAddPrincipalResponse);
+
+    rpc deletePrincipal (GDeletePrincipalRequest) returns (Empty);
+
+}

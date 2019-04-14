@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "common/model/model.proto";
+import "common/v1/model/model.proto";
 
 option java_multiple_files = true;
 option java_package = "com.github.windmill312.coffeehouse.grpc.model.v1";
@@ -17,16 +17,3 @@ message GLocation {
     double latitude = 1;
     double longitude = 2;
 }
-
-/*message GWorkTime {
-    int64 openFromMills = 1;
-    int64 openTillMills = 2;
-}
-
-message GProductInfo {
-    GUuid uidProduct = 1;
-    string productName = 2;
-    string productDescription = 3;
-    int32 productPrice = 4;
-    GCafeInfo cafe = 5;
-}*/

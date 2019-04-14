@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "common/model/model.proto";
+import "common/v1/model/model.proto";
 import "order/v1/model/request.proto";
 import "order/v1/model/response.proto";
 

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "common/model/model.proto";
+import "common/v1/model/model.proto";
 
 option java_multiple_files = true;
 option java_package = "com.github.windmill312.order.grpc.model.v1";
@@ -11,9 +11,8 @@ message GOrderInfo {
     GUuid customerUid = 3;
     repeated OrderProduct products = 4;
     double price = 5;
-    int64 createMills = 6;
-    int64 receiveMills = 7;
-    OrderStatus status = 8;
+    int64 receiveMills = 6;
+    OrderStatus status = 7;
 
     enum OrderStatus {
         CREATED = 0;

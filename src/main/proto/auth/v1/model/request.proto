@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+import "common/v1/model/model.proto";
+import "auth/v1/model/model.proto";
+
+option java_multiple_files = true;
+option java_package = "com.github.windmill312.auth.grpc.model.v1";
+
+
+message GGetPrincipalOuterKeyRequest {
+    GAuthentication authentication = 1;
+    GCredentials credentials = 2;
+}
+
+message GAuthenticateAnyRequest {
+    GAuthentication authentication = 1;
+    GToken token = 2;
+    GPrincipalOuterKey principalKey = 3;
+}
+
+message GAuthenticateServiceRequest {
+    string serviceId = 1;
+    string serviceSecret = 2;
+}
+
+message GGetAuthenticationRequest {
+    GAuthentication authentication = 1;
+    string token = 2;
+}
+
+message GRevokeAuthenticationRequest {
+    GAuthentication authentication = 1;
+    string token = 2;
+}
+
+message GGenerateTokenRequest {
+    GAuthentication authentication = 1;
+    int64 tokenTtlSeconds = 2;
+}
+
+message GCheckAccessRequest {
+    GAuthentication authentication = 1;
+    string grant = 2;
+}
+
+message GOAuthAuthorizeRequest {
+    GAuthentication authentication = 1;
+    string clientId = 2;
+    string userAccessToken = 3;
+}
+
+message GOAuthTokenRequest {
+    GAuthentication authentication = 1;
+    string clientId = 2;
+    string clientSecret = 3;
+    string authorizationCode = 4;
+}
+
+message GOAuthRefreshTokenRequest {
+    GAuthentication authentication = 1;
+    string clientId = 2;
+    string clientSecret = 3;
+    string refreshToken = 4;
+}
+
+message GAddCredentialsRequest {
+    GAuthentication authentication = 1;
+    GPrincipalOuterKey principalKey = 2;
+    GCredentials credentials = 3;
+}
+
+message GAddPrincipalRequest {
+    GAuthentication authentication = 1;
+    string principalExtId = 2;
+    string subsystemCode = 3;
+}
+
+message GDeletePrincipalRequest {
+    GAuthentication authentication = 1;
+    string principalExtId = 2;
+    string subsystemCode = 3;
+}

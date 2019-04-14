@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+import "common/v1/model/model.proto";
+import "auth/v1/model/model.proto";
+
+option java_multiple_files = true;
+option java_package = "com.github.windmill312.auth.grpc.model.v1";
+
+
+message GGetPrincipalKeyResponse {
+    GPrincipalOuterKey principalKey = 1;
+}
+
+message GAuthenticateAnyResponse {
+    GAuthentication authentication = 1;
+}
+
+message GAuthenticateServiceResponse {
+    GAuthentication authentication = 1;
+}
+
+message GGetAuthenticationResponse {
+    GAuthentication authentication = 1;
+}
+
+message GGenerateTokenResponse {
+    GToken token = 1;
+}
+
+message GOAuthAuthorizeResponse {
+    string authorizationCode = 1;
+}
+
+message GOAuthTokenResponse {
+    string accessToken = 1;
+    string tokenType = 2;
+    int64 expiresIn = 3;
+    string refreshToken = 4;
+}
+
+message GOAuthRefreshTokenResponse {
+    string accessToken = 1;
+    string tokenType = 2;
+    int64 expiresIn = 3;
+    string refreshToken = 4;
+}
+
+message GAddPrincipalResponse {
+    GPrincipalOuterKey principalKey = 1;
+}
