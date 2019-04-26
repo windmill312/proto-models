@@ -9,6 +9,12 @@ message GAuthentication {
     GPrincipalOuterKey principal = 2;
 }
 
+message GFullAuthentication {
+    GToken accessToken = 1;
+    string refreshToken = 2;
+    GPrincipalOuterKey principal = 3;
+}
+
 message GPrincipalOuterKey {
     string subsystemCode = 1;
     string extId = 2;
