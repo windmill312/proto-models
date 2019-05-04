@@ -20,6 +20,8 @@ service AuthServiceV1 {
 
     rpc generateToken (GGenerateTokenRequest) returns (GGenerateTokenResponse);
 
+    rpc updateToken (GUpdateTokenRequest) returns (GAuthenticateAnyResponse);
+
 }
 
 service AccessServiceV1 {

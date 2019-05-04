@@ -43,6 +43,12 @@ message GCheckAccessRequest {
     string grant = 2;
 }
 
+message GUpdateTokenRequest {
+    GAuthentication authentication = 1;
+    GToken token = 2;
+    GPrincipalOuterKey principalKey = 3;
+}
+
 message GOAuthAuthorizeRequest {
     GAuthentication authentication = 1;
     string clientId = 2;
