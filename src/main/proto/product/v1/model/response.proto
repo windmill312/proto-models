@@ -16,6 +16,7 @@ message GGetProductResponse {
 }
 
 message GGetProductsByCafeResponse {
+    GPage page = 1;
     repeated GProductInfo products = 2;
 }
 

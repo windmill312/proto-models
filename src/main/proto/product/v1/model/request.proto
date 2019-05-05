@@ -20,6 +20,7 @@ message GGetProductRequest {
 message GGetProductsByCafeRequest {
     GAuthentication authentication = 1;
     GUuid cafeUid = 2;
+    GPageable pageable = 3;
 }
 
 message GAddProductRequest {
