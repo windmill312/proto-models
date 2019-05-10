@@ -13,17 +13,17 @@ message GOrderInfo {
     double price = 5;
     int64 createMills = 6;
     int64 receiveMills = 7;
-    OrderStatus status = 8;
-
-    enum OrderStatus {
-        CREATED = 0;
-        WAITING_FOR_RECEIVE = 1;
-        FAILED = 2;
-        SUCCESSFULLY_COMPLETED = 3;
-    }
+    GOrderStatus status = 8;
 
     message OrderProduct {
         GUuid productUid = 1;
         int32 quantity = 2;
     }
+}
+
+enum GOrderStatus {
+    CREATED = 0;
+    WAITING_FOR_RECEIVE = 1;
+    FAILED = 2;
+    SUCCESSFULLY_COMPLETED = 3;
 }

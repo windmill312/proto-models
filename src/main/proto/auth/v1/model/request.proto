@@ -12,6 +12,11 @@ message GGetPrincipalOuterKeyRequest {
     GCredentials credentials = 2;
 }
 
+message GGetPrincipalIdentifierRequest {
+    GAuthentication authentication = 1;
+    GUuid principalUid = 2;
+}
+
 message GAuthenticateAnyRequest {
     GAuthentication authentication = 1;
     GToken token = 2;

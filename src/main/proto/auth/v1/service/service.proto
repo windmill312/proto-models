@@ -44,6 +44,8 @@ service CredentialsServiceV1 {
 
     rpc getPrincipalKey (GGetPrincipalOuterKeyRequest) returns (GGetPrincipalKeyResponse);
 
+    rpc getPrincipalIdentifier (GGetPrincipalIdentifierRequest) returns (GGetPrincipalIdentifierResponse);
+
     rpc addCredentials (GAddCredentialsRequest) returns (Empty);
 
 }

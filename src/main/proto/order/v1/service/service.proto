@@ -20,6 +20,8 @@ service OrderServiceV1 {
 
     rpc updateOrder (GUpdateOrderRequest) returns (Empty);
 
+    rpc updateOrderStatus (GUpdateOrderStatusRequest) returns (Empty);
+
     rpc removeOrder (GRemoveOrderRequest) returns (Empty);
 
     rpc removeAllOrdersByCustomer (GRemoveAllOrdersByCustomerRequest) returns (Empty);

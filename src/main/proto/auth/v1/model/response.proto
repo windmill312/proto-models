@@ -11,6 +11,10 @@ message GGetPrincipalKeyResponse {
     GPrincipalOuterKey principalKey = 1;
 }
 
+message GGetPrincipalIdentifierResponse {
+    string identifier = 1;
+}
+
 message GAuthenticateAnyResponse {
     GFullAuthentication authentication = 1;
 }

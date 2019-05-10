@@ -28,8 +28,14 @@ message GAddOrderRequest {
 }
 
 message GUpdateOrderRequest {
+     GAuthentication authentication = 1;
+     GOrderInfo order = 2;
+}
+
+message GUpdateOrderStatusRequest {
     GAuthentication authentication = 1;
-    GOrderInfo order = 2;
+    GUuid orderUid = 2;
+    GOrderStatus status = 3;
 }
 
 message GRemoveOrderRequest {

@@ -3,26 +3,10 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "com.github.windmill312.auth.grpc.model.v1";
 
-
-message GAuthentication {
-    GToken token = 1;
-    GPrincipalOuterKey principal = 2;
-}
-
-message GFullAuthentication {
-    GToken accessToken = 1;
-    string refreshToken = 2;
-    GPrincipalOuterKey principal = 3;
-}
-
-message GPrincipalOuterKey {
-    string subsystemCode = 1;
-    string extId = 2;
-}
-
-message GCredentials {
-    GLogin login = 1;
-    GSecret secret = 2;
+message GToken {
+    string token = 1;
+    int64 validFromMills = 2;
+    int64 validTillMills = 3;
 }
 
 message GLogin {
@@ -44,10 +28,25 @@ message GSecret {
     }
 }
 
-message GToken {
-    string token = 1;
-    int64 validFromMills = 2;
-    int64 validTillMills = 3;
+message GAuthentication {
+    GToken token = 1;
+    GPrincipalOuterKey principal = 2;
+}
+
+message GFullAuthentication {
+    GToken accessToken = 1;
+    string refreshToken = 2;
+    GPrincipalOuterKey principal = 3;
+}
+
+message GPrincipalOuterKey {
+    string subsystemCode = 1;
+    string extId = 2;
+}
+
+message GCredentials {
+    GLogin login = 1;
+    GSecret secret = 2;
 }
 
 message GFingerPrint {
