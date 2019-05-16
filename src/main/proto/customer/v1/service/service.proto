@@ -16,4 +16,6 @@ service CustomerServiceV1 {
 
     rpc addCustomer (GAddCustomerRequest) returns (GAddCustomerResponse);
 
+    rpc removeCustomer (GRemoveCustomerRequest) returns (Empty);
+
 }

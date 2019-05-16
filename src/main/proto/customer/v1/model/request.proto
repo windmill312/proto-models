@@ -21,3 +21,8 @@ message GAddCustomerRequest {
     GAuthentication authentication = 1;
     GCustomerInfo customer = 2;
 }
+
+message GRemoveCustomerRequest {
+    GAuthentication authentication = 1;
+    GUuid customerUid = 2;
+}
